@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">School Management App</string>
+    <string name="logo">logo</string>
+    <string name="usr_name">Enter your User Name</string>
+</resources>
