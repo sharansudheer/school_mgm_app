@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.SchoolManagementApp" parent="Theme.MaterialComponents.Light">
+    <style name="Theme.SchoolManagementApp" parent="Theme.Material3.Light">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -24,5 +24,7 @@
     <style name="Widget.Material3.CardView.Elevated" parent="Widget.MaterialComponents.CardView">
         <item name="cardElevation">4dp</item>
     </style>
+
+
 
 </resources>
