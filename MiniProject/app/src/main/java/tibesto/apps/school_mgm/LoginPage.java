@@ -1,8 +1,10 @@
 package tibesto.apps.school_mgm;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -21,11 +23,42 @@ public class LoginPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        = retrofit.create(.class);
-        Call<> call = .Call("","application/json");
+//        Retrofit retrofit = new Retrofit.Builder()
+//                .baseUrl("")
+//                .addConverterFactory(GsonConverterFactory.create())
+//                .build();
+//        = retrofit.create(.class);
+//        Call<> call = .Call("","application/json");
+        Button openFragmentButton = findViewById(R.id.bt_sign_up);
+        openFragmentButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openFragment();
+            }
+        });
+
+
+    }
+    private void openFragment() {
+        SignUp signUpFragment = new SignUp();
+        ConstraintLayout mainPage = findViewById(R.id.mainView);
+        mainPage.setVisibility(View.GONE);
+
+        // Replace the container with the new fragment
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.signupFrag, signUpFragment)
+                .addToBackStack(null) // Add to back stack for navigation
+                .commit();
+    }
+    @Override
+    public void onBackPressed() {
+        if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
+            getSupportFragmentManager().popBackStack();
+            // Show main activity layout
+            ConstraintLayout mainPage = findViewById(R.id.mainView);
+            mainPage.setVisibility(View.VISIBLE);
+        } else {
+            super.onBackPressed();
+        }
     }
 }
