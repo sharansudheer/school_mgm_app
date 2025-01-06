@@ -3,6 +3,7 @@ package tibesto.apps.school_mgm;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -29,12 +30,15 @@ public class LoginPage extends AppCompatActivity {
 //                .build();
 //        = retrofit.create(.class);
 //        Call<> call = .Call("","application/json");
-        Button openFragmentButton = findViewById(R.id.bt_sign_up);
-        openFragmentButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openFragment();
-            }
+
+        Button openFragSignUp = findViewById(R.id.bt_sign_up);
+        openFragSignUp.setOnClickListener(v -> openFragment());
+
+        Button openDash = findViewById(R.id.bt_login);
+        openDash.setOnClickListener(v -> {
+            // Intent to open SecondActivity
+            Intent intent = new Intent(LoginPage.this, MainDashboard.class);
+            startActivity(intent);
         });
 
 
