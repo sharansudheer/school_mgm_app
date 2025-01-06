@@ -52,4 +52,9 @@
     <string name="sign_up">Sign Up</string>
     <string name="name">Name</string>
     <string name="log_out">Log Out</string>
+    <string name="dashboard_title">Dashboard</string>
+    <string name="manage_students_txt">Manage Students</string>
+    <string name="menu">Menu</string>
+    <string name="navigation_drawer_open">Drawer Open</string>
+    <string name="navigation_drawer_close">Drawer Closed</string>
 </resources>
